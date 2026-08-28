@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishi Connect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <h2>🌱Krishi-Connect</h2>
+    <p>Connect.Trade.Grow Together</p>
+
+    <div>
+        <a href="@" onclick="home()">Home</a>
+        <a href="@" onclick="marketplace()">Marketplace</a>
+        <a href="@">Guide</a>
+        <a href="@">About</a>
+        <a href="@">Contact</a>
+    </div>
+
+    <button onclick="lang()">EN | मराठी</button>
+
+    <button onclick="window.location.href='login.html'">
+        Login/Sign Up
+    </button>
+</nav>
+
+
+<!-- Home page -->
+
+<div id="home">
+
+    <section class="class">
+        <div class="class-work">
+
+            <h1>
+                Sell Direct. <br>
+                Get a Fair Price. <br>
+                <span>Fully Traceable.</span>
+            </h1>
+
+            <p>
+                Empowering farmers.Connecting buyers.<br>
+                Building trust with every harvest
+            </p>
+
+            <button onclick="marketplace()">
+                Browse Marketplace
+            </button>
+
+            <button class="place" onclick="howitworks">
+                How It Works
+            </button>
+
+        </div>
+    </section>
+
+
+    <h2 class="title">🌿Choose Your Login🌿</h2>
+
+    <p class="subtitle">
+        Join the right platform for your needs
+    </p>
+
+
+    <div class="cards">
+
+
+        <!-- FARMER -->
+
+        <div class="card">
+
+            <div class="icon">👨‍🌾</div>
+
+            <h2>I'm a Farmer</h2>
+
+            <p>
+                List your crops, get fair prices
+                and sell directly to buyers.
+            </p>
+
+            <ul>
+                <li>List Crop Batches</li>
+                <li>AI Price Advisor</li>
+                <li>Live Bidding</li>
+                <li>Earings & Payments</li>
+            </ul>
+
+
+            <!-- FARMER LOGIN - UNCHANGED -->
+
+            <button onclick="window.location.href='login.html'">
+                Login/Sign Up
+            </button>
+
+        </div>
+
+
+
+        <!-- CUSTOMER -->
+
+        <div class="card-customer">
+
+            <div class="icon">🛒</div>
+
+            <h2>I'm a Customer</h2>
+
+            <p>
+                Buy fresh produce directly from farmers.
+            </p>
+
+            <ul>
+                <li>Browse Fresh Produce</li>
+                <li>Verified Farms</li>
+                <li>Track Orders</li>
+                <li>QR Traceability</li>
+            </ul>
+
+            <button onclick="login()">
+                Login/Sign Up
+            </button>
+
+        </div>
+
+
+
+        <!-- WHOLESALER -->
+
+        <div class="card-wholesaler">
+
+            <div class="icon">🏭</div>
+
+            <h2>I'm a Wholesaler</h2>
+
+            <p>
+                Bid on bulk crops.
+            </p>
+
+            <ul>
+                <li>Open Bidding</li>
+                <li>B2B Sourcing</li>
+                <li>Blockchain Verified</li>
+                <li>Active Deals</li>
+            </ul>
+
+
+            <!-- WHOLESALER LOGIN - CONNECTED -->
+
+            <button onclick="window.location.href='wholesaler-login.html'">
+                Login/Sign Up
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>
