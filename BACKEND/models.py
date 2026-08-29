@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, String, Float, Text, Date
+
 from database import Base
 
 
@@ -7,6 +8,8 @@ from database import Base
 # =========================================================
 
 class Farmer(Base):
+
+
 
     __tablename__ = "farmers"
 
@@ -20,10 +23,28 @@ class Farmer(Base):
 
     farm_location = Column(String(200), nullable=False)
 
+# =========================================================
+# CUSTOMER TABLE
+# =========================================================
 
+class Customer(Base):
+
+    __tablename__ = "customers"
+
+    id = Column(Integer, primary_key=True, index=True)
+
+    name = Column(String(100), nullable=False)
+
+    mobile = Column(String(15), unique=True, nullable=False)
+
+    password = Column(String(255), nullable=False)
+
+    location = Column(String(200), nullable=False)
 # =========================================================
 # WHOLESALER TABLE
 # =========================================================
+
+
 
 class Wholesaler(Base):
 
@@ -43,6 +64,8 @@ class Wholesaler(Base):
 # =========================================================
 # CROP SLOT TABLE
 # =========================================================
+
+
 
 class CropSlot(Base):
 

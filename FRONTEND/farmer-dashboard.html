@@ -44,16 +44,7 @@
     <div class="farmer-box"></div>
 
 
-    <!-- LOGOUT -->
-
-    <button class="logout-btn"
-            onclick="logoutFarmer()">
-
-        <i class="fa-solid fa-right-from-bracket"></i>
-
-        Logout
-
-    </button>
+    
 
 </aside>
 
@@ -268,11 +259,12 @@
                     before selling to buyers.
                 </p>
 
-                <button class="card-btn">
+               <button class="card-btn"
+        onclick="openFarmerMarketPrices()">
 
-                    Check Prices
+    Check Prices
 
-                </button>
+</button>
 
             </div>
 
@@ -525,7 +517,21 @@ function getFarmerData() {
 
 }
 
+// =========================================================
+// OPEN MARKET PRICES FROM FARMER DASHBOARD
+// =========================================================
 
+function openFarmerMarketPrices() {
+
+    localStorage.setItem(
+        "marketPriceFrom",
+        "farmer"
+    );
+
+    window.location.href =
+        "market-prices.html";
+
+}
 
 // =========================================================
 // LOAD FARMER NAME

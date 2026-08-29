@@ -19,7 +19,30 @@ class FarmerLogin(BaseModel):
 
     mobile: str
     password: str
+# =========================================================
+# CUSTOMER REGISTRATION
+# =========================================================
 
+class CustomerCreate(BaseModel):
+
+    name: str
+
+    mobile: str
+
+    password: str
+
+    location: str
+
+
+# =========================================================
+# CUSTOMER LOGIN
+# =========================================================
+
+class CustomerLogin(BaseModel):
+
+    mobile: str
+
+    password: str
 
 # =========================================================
 # WHOLESALER

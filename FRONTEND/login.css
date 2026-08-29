@@ -4,21 +4,43 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f7f4;
 
+/* ================= BODY ================= */
+
+body.login-page {
+
+    width: 100%;
     min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, sans-serif;
+
+    background: #f4f7f4;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+
+/* ================= CONTAINER ================= */
+
 .login-container {
+
     width: 100%;
+    min-height: 100vh;
+
     padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
+/* ================= LOGIN BOX ================= */
 
 .login-box {
 
@@ -32,8 +54,11 @@ body {
     border-radius: 15px;
 
     box-shadow:
-        0 5px 20px rgba(0,0,0,0.12);
+        0 5px 20px rgba(0, 0, 0, 0.12);
 }
+
+
+/* ================= HEADING ================= */
 
 .login-box h1 {
 
@@ -44,6 +69,9 @@ body {
     margin-bottom: 8px;
 }
 
+
+/* ================= SUBTITLE ================= */
+
 .subtitle {
 
     text-align: center;
@@ -51,7 +79,12 @@ body {
     color: #777;
 
     margin-bottom: 28px;
+
+    font-size: 15px;
 }
+
+
+/* ================= LABEL ================= */
 
 .login-box label {
 
@@ -63,6 +96,9 @@ body {
 
     color: #333;
 }
+
+
+/* ================= INPUT ================= */
 
 .login-box input {
 
@@ -79,12 +115,23 @@ body {
     font-size: 15px;
 
     outline: none;
+
+    background: white;
 }
+
+
+/* ================= INPUT FOCUS ================= */
 
 .login-box input:focus {
 
     border-color: #267a35;
+
+    box-shadow:
+        0 0 0 2px rgba(38, 122, 53, 0.10);
 }
+
+
+/* ================= LOGIN BUTTON ================= */
 
 .login-box button {
 
@@ -105,7 +152,10 @@ body {
     font-weight: bold;
 
     cursor: pointer;
+
+    margin-top: 2px;
 }
+
 
 .login-box button:hover {
 
@@ -113,27 +163,23 @@ body {
 }
 
 
+/* ================= MOBILE ================= */
 
+@media (max-width: 480px) {
 
+    .login-container {
 
+        padding: 15px;
+    }
 
+    .login-box {
 
-#message {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 14px;
-    font-weight: bold;
-}
+        padding: 25px 20px;
+    }
 
-.register-link {
-    text-align: center;
-    margin-top: 18px;
-    color: #777;
-    font-size: 14px;
-}
+    .login-box h1 {
 
-.register-link a {
-    color: #267a35;
-    text-decoration: none;
-    font-weight: bold;
+        font-size: 26px;
+    }
+
 }

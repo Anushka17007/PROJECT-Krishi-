@@ -10,6 +10,8 @@ from schemas import (
     FarmerLogin,
     WholesalerCreate,
     WholesalerLogin,
+    CustomerCreate,
+    CustomerLogin,
     CropSlotCreate,
     BidCreate,
     BidResponseCreate,
@@ -153,7 +155,93 @@ def farmer_login(
         "farm_location":
             existing_farmer.farm_location
     }
+# =========================================================
+# CUSTOMER REGISTRATION
+# =========================================================
 
+@app.post("/api/customers/register")
+def register_customer(
+    customer: CustomerCreate,
+    db: Session = Depends(get_db)
+):
+
+    existing_customer = db.query(
+        models.Customer
+    ).filter(
+        models.Customer.mobile == customer.mobile
+    ).first()
+
+    if existing_customer:
+
+        raise HTTPException(
+            status_code=400,
+            detail="Customer with this mobile number already exists"
+        )
+
+    new_customer = models.Customer(
+
+        name=customer.name,
+
+        mobile=customer.mobile,
+
+        password=customer.password,
+
+        location=customer.location
+    )
+
+    db.add(new_customer)
+
+    db.commit()
+
+    db.refresh(new_customer)
+
+    return {
+
+        "message": "Customer registered successfully",
+
+        "customer_id": new_customer.id
+    }
+
+
+# =========================================================
+# CUSTOMER LOGIN
+# =========================================================
+
+@app.post("/api/customers/login")
+def customer_login(
+    customer: CustomerLogin,
+    db: Session = Depends(get_db)
+):
+
+    existing_customer = db.query(
+        models.Customer
+    ).filter(
+
+        models.Customer.mobile == customer.mobile,
+
+        models.Customer.password == customer.password
+
+    ).first()
+
+    if not existing_customer:
+
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid mobile number or password"
+        )
+
+    return {
+
+        "message": "Customer login successful",
+
+        "customer_id": existing_customer.id,
+
+        "name": existing_customer.name,
+
+        "mobile": existing_customer.mobile,
+
+        "location": existing_customer.location
+    }
 
 # =========================================================
 # WHOLESALER REGISTRATION
@@ -675,5 +763,33 @@ def get_market_prices(
     prices = db.query(
         models.MarketPrice
     ).all()
+
+    return prices
+@app.get("/api/market-prices/search")
+def search_market_prices(
+    commodity: str = None,
+    market: str = None,
+    db: Session = Depends(get_db)
+):
+
+    query = db.query(models.MarketPrice)
+
+    if commodity:
+        query = query.filter(
+            models.MarketPrice.crop_name.ilike(
+                f"%{commodity}%"
+            )
+        )
+
+    if market:
+        query = query.filter(
+            models.MarketPrice.market_name.ilike(
+                f"%{market}%"
+            )
+        )
+
+    prices = query.order_by(
+        models.MarketPrice.date.desc()
+    ).limit(50).all()
 
     return prices

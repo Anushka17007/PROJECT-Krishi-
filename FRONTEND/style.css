@@ -3,15 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: Arial, sans-serif;
-    background: f8faf7;
+    background: #f8faf7;
     color: darkgreen;
 }
 
-/*==Navbar==*/
+/*== Navbar ==*/
 
-nav{
+nav {
     height: 90px;
     background: white;
     display: flex;
@@ -20,12 +21,14 @@ nav{
     border-bottom: 1px solid lightgray;
     gap: 40px;
 }
-nav h2{
+
+nav h2 {
     color: forestgreen;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 28px;
     margin-right: auto;
 }
+
 nav div {
     display: flex;
     gap: 35px;
@@ -41,53 +44,58 @@ nav a {
 nav a:hover {
     color: forestgreen;
 }
- nav button{
+
+nav button {
     padding: 12px 20px;
     border: 1px solid black;
     background: white;
     border-radius: 8px;
- }
+}
 
- nav button:last-child {
+nav button:last-child {
     background-color: #287a32;
     color: white;
     border: none;
- }
- /*== section==*/
+}
 
- .class {
+/*== Section ==*/
+
+.class {
     min-height: 400px;
     padding: 55px 90px;
     display: flex;
     align-items: center;
 
     background:
-    linear-gradient(to right,
-    rgba(255,255,255,0.2)),
-    url("https://media.istockphoto.com/id/1092520698/photo/indian-farmer-at-onion-field.jpg?s=612x612&w=0&k=20&c=gvu-DzA17EyVSNzvdf7L3R8q0iIvLapG15ktOimqXqU=");
-    background-size:cover;
-    background-position: center;
- }
- .class-work {
-    max-width: 600px;
- }
+        linear-gradient(to right, rgba(255,255,255,0.2)),
+        url("https://media.istockphoto.com/id/1092520698/photo/indian-farmer-at-onion-field.jpg?s=612x612&w=0&k=20&c=gvu-DzA17EyVSNzvdf7L3R8q0iIvLapG15ktOimqXqU=");
 
- .class-work h1{
+    background-size: cover;
+    background-position: center;
+}
+
+.class-work {
+    max-width: 600px;
+}
+
+.class-work h1 {
     font-size: 48px;
     line-height: 1.15;
     color: #145b25;
     margin-bottom: 20px;
- }
+}
 
- .class-work h1 span {
-    color: #145b25
- }
- .class-work p{
+.class-work h1 span {
+    color: #145b25;
+}
+
+.class-work p {
     font-size: 18px;
     line-height: 1.7;
     margin-bottom: 25px;
- }
- .class-work button {
+}
+
+.class-work button {
     padding: 14px 25px;
     border-radius: 8px;
     font-size: 16px;
@@ -95,133 +103,112 @@ nav a:hover {
     margin-right: 12px;
     background: #2e7d32;
     color: white;
- }
+}
 
- .classwork button:hover {
+.classwork button:hover {
     background: forestgreen;
- }
- .class-work .place {
+}
+
+.class-work .place {
     background: white;
     color: forestgreen;
     margin-left: 10px;
     border: 1px solid #ccc;
- }
+}
 
- /*==Title==*/
+/*== Title ==*/
 
- .title {
+.title {
     text-align: center;
     margin-top: 25px;
     font-size: 30px;
     color: #17251a;
- }
- .subtitle {
+}
+
+.subtitle {
     text-align: center;
     margin-top: 8px;
     color: gray;
     font-size: 16px;
- }
+}
 
- /*==cards==*/
+/*== Cards ==*/
 
- .cards {
+.cards {
     display: flex;
     gap: 25px;
     padding: 30px 6%;
     justify-content: center;
- }
- .card {
-    width:32%;
-    min-height: 300px;
-    padding: 30px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
- }
+}
 
- .card-customer {
-    width:32%;
+.card,
+.card-customer,
+.card-wholesaler {
+    width: 32%;
     min-height: 300px;
     padding: 30px;
     background: white;
     border: 1px solid #ddd;
     border-radius: 15px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.08);
- }
 
- .card-wholesaler {
-    width:32%;
-    min-height: 300px;
-    padding: 30px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
- }
- .card h2 {
+    /* Smooth hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h2 {
     color: darkgreen;
     margin: 15px 0;
- }
+}
 
- .card-customer h2 {
+.card-customer h2 {
     color: royalblue;
     margin: 15px 0;
- }
+}
 
- .card-wholesaler h2 {
+.card-wholesaler h2 {
     color: brown;
     margin: 15px 0;
- }
- .card p {
+}
+
+.card p,
+.card-customer,
+.card-wholesaler {
     line-height: 1.5;
     color: black;
     margin-bottom: 15px;
- }
- .card-customer {
-     line-height: 1.5;
-    color: black;
-    margin-bottom: 15px;
- }
- .card-wholesaler {
-     line-height: 1.5;
-    color: black;
-    margin-bottom: 15px;
- }
-.card ul {
+}
+
+.card ul,
+.card-customer ul,
+.card-wholesaler ul {
     margin-bottom: 20px;
 }
-.card-customer {
-     margin-bottom: 20px;
-}
-.card-wholesaler {
-     margin-bottom: 20px;
-}
-.card li {
-    margin: 12px 0;
-}
-.card-customer li {
-    margin: 12px 0;
-}
+
+.card li,
+.card-customer li,
 .card-wholesaler li {
     margin: 12px 0;
 }
 
-.card li::before {
+.card li::before,
+.card-customer li::before,
+.card-wholesaler li::before {
     content: "✔️";
-    color: green;
+    margin-right: 8px;
 }
- .card-customer li::before {
-    content: "✔️";
-    color: royalblue
- }
- .card-wholesaler li::before {
-     content: "✔️";
-    color: brown
- }
- /*==icon==*/
 
- .icon {
+.card-customer li::before {
+    color: royalblue;
+}
+
+.card-wholesaler li::before {
+    color: brown;
+}
+
+/*== Icon ==*/
+
+.icon {
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -231,17 +218,21 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     font-size: 35px;
- }
- .card-customer .icon {
+}
+
+.card-customer .icon {
     background: #2160c0;
- }
- .card-wholesaler .icon {
+}
+
+.card-wholesaler .icon {
     background: brown;
- }
-  /*==login button==*/
- .card button ,
- .card-customer button,
- .card-wholesaler button {
+}
+
+/*== Login Button ==*/
+
+.card button,
+.card-customer button,
+.card-wholesaler button {
     width: 100px;
     padding: 13px;
     border: none;
@@ -249,34 +240,41 @@ nav a:hover {
     color: white;
     background: #258236;
     font-size: 15px;
- }
+}
 
 .card-customer button {
     background: blue;
 }
+
 .card-wholesaler button {
     background: brown;
 }
-.card:hover {
-    background: #3c6544;
-}
-.card-customer:hover {
-    background: rgb(75, 75, 135);
-}
-.card-wholesaler:hover {
-    background: rgb(134, 75, 75);
-}
-/*==Foot==*/
 
-@media (max-width:900px) {
+/*== Professional Card Hover ==*/
+
+.card:hover,
+.card-customer:hover,
+.card-wholesaler:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/*== Footer ==*/
+
+/*== Responsive ==*/
+
+@media (max-width: 900px) {
+
     nav {
         padding: 15px;
         gap: 15px;
     }
+
     nav div {
         gap: 12px;
     }
-     .class {
+
+    .class {
         padding: 40px 25px;
     }
 
