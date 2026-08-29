@@ -44,9 +44,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
 
-    allow_origins=[
-        "https://project-sih-1-qhvg.onrender.com"
-    ],
+    allow_origins=["*"],
 
     allow_credentials=True,
 
