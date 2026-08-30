@@ -1,17 +1,16 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
+import os
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker, declarative_base
 
-# SQLite database
-DATABASE_URL = "sqlite:///./krishi_connect.db"
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./krishi_connect.db")
 
-
-# Database engine
-engine = create_engine(
-    DATABASE_URL,
-    connect_args={"check_same_thread": False}
-)
-
+if DATABASE_URL.startswith("postgresql://"):
+    engine = create_engine(DATABASE_URL)
+else:
+        engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False })
 
 # Database session
 SessionLocal = sessionmaker(
